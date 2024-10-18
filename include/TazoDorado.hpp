@@ -11,7 +11,7 @@ class TazoDorado
 ~ TazoDorado() {
 }
 
-void Flotar(){
-    this->flotando=true
+void Flotar() {
+    this->flotando=true;
 }
 };
