@@ -1,0 +1,150 @@
+@startuml
+class JuegoMsPacman{
+    - Personaje : personajes[4]
+    - Etapa : etapas [256]
+    - Cancion : canciones [7]
+    - Escenario : escenarios [4]
+    - Menu : menu [1]
+}
+
+class Juego{
+    - Color [11]
+}
+class Escenario
+class Etapa{
+    - Acto : actos [3]
+}
+class Acto
+class Laberinto
+class Personaje{
+    - Fantasma : fantasmas [4]
+    - MsPacman : mspacman [1]
+}
+
+
+class Menu{
+    - Opcion : opciones [4]
+}
+class MsPacman{
+    - Vida 
+}
+class Fantasma{
+    - Habilidad : habilidades []
+    - NombreFantasmita : NombreFantasmita []
+}
+class Movimiento
+class Opcion
+class Habilidad
+class Vida
+class PowerPellet
+class Comida
+class ConversorFantasma
+class Programa
+
+
+
+class Dibujante
+class DiseñoGrafico
+class PaletaColor
+class Color
+
+
+PaletaColor : + Matices ()
+PaletaColor : + Tonos ()
+PaletaColor : + Tintes ()
+
+
+Color : + Amarillo ()
+Color : + Magenta ()
+Color : + Rojo ()
+Color : + Rosa ()
+Color : + Cian ()
+Color : + Naranja ()
+Color : + Azul ()
+Color : + Blanco ()
+Color : + Verde ()
+Color : + Rojo ()
+Color : + Naranja () 
+
+
+Dibujante o-- PaletaColor
+DiseñoGrafico o-- PaletaColor
+PaletaColor o-- Color 
+Juego *-- Color 
+
+
+class Compositor
+class Composicion
+class Cancion 
+class NombreFantasmita
+class Fruta
+class Bolita
+
+NombreFantasmita : + Blinky ()
+NombreFantasmita : + Pinky ()
+NombreFantasmita : + Inky ()
+NombreFantasmita : + Sue ()
+
+
+Compositor o-- Composicion
+Composicion o-- Cancion
+
+
+Composicion : + Melodia ()
+Composicion : + Ritmos ()
+Cancion : + Pista ()
+
+
+Movimiento : + MoverDerecha ()
+Movimiento : + MoverIzquierda ()
+Movimiento : + MoverAbajo ()
+Movimiento : + MoverArriba ()
+
+
+Fruta : + ComerCereza ()
+Fruta : + ComerFresa ()
+Fruta : + ComerPlatano ()
+Fruta : + ComerPretzel ()
+Fruta : + ComerDurazno ()
+Fruta : + ComerManzana ()
+Fruta : + ComerPera ()
+Bolita : + ComerBolita ()
+
+
+Habilidad : + Perseguir ()
+Habilidad : + Atacar ()
+Habilidad : + Encerrar ()
+
+
+PowerPellet : + Ingerir ()
+
+
+class Puntaje
+class ConversorFantasma
+Juego <|-- JuegoMsPacman
+JuegoMsPacman  *-- "3" Escenario 
+JuegoMsPacman *-- "7" Cancion 
+JuegoMsPacman *-- "256" Etapa
+Etapa  *-- "3" Acto
+Escenario  <|-- Laberinto
+JuegoMsPacman  *-- "1" Menu
+JuegoMsPacman *-- "5" Personaje
+Personaje *-- "1" MsPacman
+Personaje *-- "4" Fantasma
+Menu *-- "4" Opcion
+Personaje o-- Movimiento
+MsPacman o-- Puntaje 
+
+
+MsPacman o-- PowerPellet
+PowerPellet  <|--  ConversorFantasma
+Fantasma o--Habilidad
+Fantasma o-- NombreFantasmita
+MsPacman *-- "3" Vida
+Puntaje  <|--  Comida
+Comida o-- Fruta
+Comida o-- Bolita
+Programa <|-- Juego
+
+
+@enduml
