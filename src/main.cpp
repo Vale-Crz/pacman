@@ -1,5 +1,5 @@
 #include<iostream>
-#include<TazoDoraddo.hpp>
+#include<TazoDorado.hpp>
 
 int main(){
     std::cout<<"Buenas"<<std::endl;
