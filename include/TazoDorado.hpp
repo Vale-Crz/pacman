@@ -14,4 +14,9 @@ class TazoDorado
 void Flotar() {
     this->flotando=true;
 }
+
+    bool Flotando(){
+        return this->flotando; 
+    }
+
 };
