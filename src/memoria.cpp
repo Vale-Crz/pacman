@@ -38,12 +38,12 @@ int main(int arg, char const *argv[]){
   cout<<"Direccion Dinamica : " <<direccion + 1 << endl;
 
   direccion->Inicializar();
-  cout<<"Valor en direccion:"<<direccion->Flotando<< endl;
+  cout<<"Valor en direccion:"<<direccion->Flotando()<< endl;
 
 ///C++-----------------------------------------------------------------------------
 TazoDorado *direccion2;
 direccion2 = new TazoDorado();
- cout<<"Valor en direccion:"<<direccion2->Flotando<< endl;
+ cout<<"Valor en direccion:"<<direccion2->Flotando()<< endl;
 
 
      return 0;
